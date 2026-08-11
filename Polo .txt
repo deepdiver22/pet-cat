@@ -1,0 +1,175 @@
+Gathered additional information
+{
+  "ability_name": "repo-overview"
+}
+
+Results of /repos/Ariel1006/community/contents?ref=chatgpt-updates and 4 other tool calls
+
+Get data from /repos/Ariel1006/community/contents?ref=chatgpt-updates
+{
+  "endpoint": "/repos/Ariel1006/community/contents?ref=chatgpt-updates",
+  "page": 1,
+  "perPage": 100,
+  "repo": "Ariel1006/community",
+  "task": "List top-level entries of the repo and their types",
+  "userQuery": "List the top-level files and directories in the Ariel1006/community repository on branch chatgpt-updates"
+}
+
+View directory .github?ref=chatgpt-updates
+{
+  "endpoint": "/repos/Ariel1006/community/contents/.github?ref=chatgpt-updates",
+  "page": 1,
+  "perPage": 100,
+  "repo": "Ariel1006/community",
+  "task": "List .github top-level entries",
+  "userQuery": "List contents of .github directory in Ariel1006/community on branch chatgpt-updates"
+}
+
+View directory .github/workflows?ref=chatgpt-updates
+{
+  "endpoint": "/repos/Ariel1006/community/contents/.github/workflows?ref=chatgpt-updates",
+  "page": 1,
+  "perPage": 100,
+  "repo": "Ariel1006/community",
+  "task": "List .github/workflows entries",
+  "userQuery": "List CI workflows in .github/workflows for branch chatgpt-updates"
+}
+
+View directory DISCUSSIONS?ref=chatgpt-updates
+{
+  "endpoint": "/repos/Ariel1006/community/contents/DISCUSSIONS?ref=chatgpt-updates",
+  "page": 1,
+  "perPage": 100,
+  "repo": "Ariel1006/community",
+  "task": "List contents of DISCUSSIONS directory",
+  "userQuery": "List files in DISCUSSIONS directory on branch chatgpt-updates"
+}
+
+Get data from /repos/Ariel1006/community/contents?ref=chatgpt-updates&page=1&per_page=100
+{
+  "endpoint": "/repos/Ariel1006/community/contents?ref=chatgpt-updates&page=1&per_page=100",
+  "page": 1,
+  "perPage": 100,
+  "repo": "Ariel1006/community",
+  "task": "List top-level entries of the repo and their types (full)",
+  "userQuery": "List the top-level files and directories in the Ariel1006/community repository on branch chatgpt-updates"
+}
+
+View file README.md
+
+View directory .github/DISCUSSION_TEMPLATE?ref=chatgpt-updates
+{
+  "endpoint": "/repos/Ariel1006/community/contents/.github/DISCUSSION_TEMPLATE?ref=chatgpt-updates",
+  "page": 1,
+  "perPage": 100,
+  "repo": "Ariel1006/community",
+  "task": "List files in .github/DISCUSSION_TEMPLATE",
+  "userQuery": "List contents of .github/DISCUSSION_TEMPLATE in Ariel1006/community on branch chatgpt-updates"
+}
+What this is
+
+A documentation/configuration repository that defines the GitHub Discussions categories, per-category discussion templates, community guidelines, and automation (GitHub Actions) used by the community GitHub organization — it's not an application, it’s the content and tooling that shape how community discussions are created, labeled, and moderated.
+
+Stack
+
+Language(s): Markdown (README, CODE_OF_CONDUCT), YAML (GitHub Actions and discussion templates)
+Framework / runtime: GitHub Discussions + GitHub Actions (no runtime application)
+Notable libraries: None — this repo contains configuration and content (no code dependencies). Automation is implemented with GitHub Actions workflows in YAML.
+How it's organized
+
+Code
+README.md                     -- landing page: lists discussion categories and links
+CODE_OF_CONDUCT.md            -- community conduct policy
+LICENSE, LICENSE-CODE         -- licensing and contributor code license text
+.github/
+  DISCUSSION_TEMPLATE/        -- per-category discussion templates (YAML files)
+    accessibility.yml
+    actions.yml
+    api-and-webhooks.yml
+    code-search-and-navigation.yml
+    code-security.yml
+    codespaces.yml
+    copilot.yml
+    discussions.yml
+    feed.yml
+    general.yml
+    github-education.yml
+    lists.yml
+    mobile.yml
+    packages.yml
+    pages.yml
+    profile.yml
+    programming-help.yml
+    projects-and-issues.yml
+    pull-requests.yml
+    repositories.yml
+    sponsors.yml
+  workflows/                  -- GitHub Actions workflows for automation
+    auto-close-pr.yml
+    issue_projects_labeler.yml
+    label-templated-discussions.yml
+    remove-governed-labels-on-create.yml
+    remove-governed-labels-on-label.yml
+  label-actions.yml           -- label/action configuration
+How it fits together:
+
+README.md documents the product-area categories and links each category to the corresponding Discussions category in the community org. The .github/DISCUSSION_TEMPLATE/.yml files provide per-category templates that pre-fill and structure new discussions. The workflows in .github/workflows/.yml run on GitHub (Actions) to automate tasks such as labeling discussions, closing or tagging stale PRs, and removing governed labels. label-actions.yml appears to hold label governance configuration used by the workflows.
+How to run it
+
+There is no runnable service; to preview or change the repository content and automation, clone, edit, and open a pull request. Example workflow for contributing or testing locally:
+
+Code
+# clone the repo
+git clone git@github.com:Ariel1006/community.git
+cd community
+git checkout -b my-discussion-template-fix
+
+# edit README.md or .github/DISCUSSION_TEMPLATE/<category>.yml
+git add README.md .github/DISCUSSION_TEMPLATE/my-change.yml
+git commit -m "Update discussion template for <category>"
+git push --set-upstream origin my-discussion-template-fix
+# then open a Pull Request on GitHub
+Notes:
+
+The GitHub Actions workflows execute on GitHub; there are no local tests or build steps to run.
+To preview Markdown, use any Markdown viewer or the GitHub web UI.
+Try asking
+
+"Do the files in .github/DISCUSSION_TEMPLATE (for example accessibility.yml and copilot.yml) cover every category listed in README.md, or are there categories referenced in README.md that lack a template?"
+"What labels does .github/workflows/label-templated-discussions.yml apply, and what event triggers that workflow?"
+"Is label-actions.yml intended to be edited directly, or is label governance managed elsewhere in the org (I couldn't find a CONTRIBUTING.md or mapping file in the repo)?"
+Is label-actions.yml intended to be edited directly, or is label governance managed elsewhere in the org (I couldn't find a CONTRIBUTING.md or mapping file in the repo)
+
+
+View file .github/label-actions.yml
+
+Search content:label-actions.yml in repo:Ariel1006/community
+{
+  "query": "content:label-actions.yml",
+  "scopingQuery": "repo:Ariel1006/community"
+}
+
+Using results of get file and 2 other tool calls
+
+View file .github/workflows/label-templated-discussions.yml
+
+View file .github/workflows/remove-governed-labels-on-create.yml
+
+View file .github/workflows/remove-governed-labels-on-label.yml
+Short answer: It's a repo-level config file that the workflows in this repository read and act on — editing .github/label-actions.yml here will change the behavior for this repo. I did not find any CONTRIBUTING.md or a mapping file in this repository that centralizes label governance.
+
+What I checked (evidence)
+
+.github/label-actions.yml (exists in this repo) — this is the configuration the action will read.
+.github/workflows/remove-governed-labels-on-label.yml — explicitly sets config-path: '.github/label-actions.yml' and calls dessant/label-actions@v3 (lines ~60–70). That workflow uses the file to decide which labels to unlabel on discussions.
+.github/workflows/remove-governed-labels-on-create.yml — also uses a hard-coded topic ('more information needed') and label lookup logic (so some behavior is configured in workflows themselves).
+Implication
+
+Because the workflow references the file path inside this repository, label-actions.yml is intended to be edited in-repo (via PR) to change how the dessant/label-actions step behaves here.
+There is no sign in this repository of a centralized/org-level mapping or CONTRIBUTING guideline that would override this file. That doesn't prove there isn't an org-level source of truth elsewhere in the organization, only that it's not in this repo.
+Recommended next checks (you can ask me to run these)
+
+Search the organization for other copies (or an org-level .github repo) that might hold centralized label governance: GitHub code search for filename:label-actions.yml or search for dessant/label-actions usages across the org.
+Ask org admins whether label governance is managed in an org-level repository (often a repo named <org>/.github) or via a separate admin process.
+If you plan to change behavior org-wide, consider moving the config to the org's .github repo (or a centralized config repository) and update workflows accordingly.
+If you want, I can search the organization for other instances of label-actions.yml or for usages of dessant/label-actions to confirm whether this is centralized elsewhere — tell me the org name to search
